@@ -14,3 +14,45 @@ Theres a 'tweet' class you can use to style your tweet.
 
 
 // export default Tweet;
+
+
+// Tweet.tsx
+//import React, { useState } from 'react';
+
+interface TweetProps {
+  id: number;
+  username: string;
+  content: string;
+  likes: number;
+  timestamp: string;
+}
+
+const Tweet: React.FC<TweetProps> = ({ id, username, content, likes, timestamp }) => {
+  const [likeCount, setLikeCount] = useState<number>(likes);
+  const [isLiked, setIsLiked] = useState<boolean>(false);
+
+  const handleLike = () => {
+    if (isLiked) {
+      setLikeCount(likeCount - 1);
+    } else {
+      setLikeCount(likeCount + 1);
+    }
+    setIsLiked(!isLiked);
+  };
+
+  return (
+    <div className="tweet">
+      <h3>{username}</h3>
+      <p>{content}</p>
+      <div>
+        <button onClick={handleLike}>
+          {isLiked ? '❤️' : '🤍'} Like
+        </button>
+        <span>{likeCount} {likeCount === 1 ? 'Like' : 'Likes'}</span>
+        <span style={{ marginLeft: '10px', color: '#555' }}>{timestamp}</span>
+      </div>
+    </div>
+  );
+};
+
+export default Tweet;
