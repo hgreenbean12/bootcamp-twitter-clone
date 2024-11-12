@@ -1,6 +1,6 @@
 // App.js
 import React from 'react';
-import Tweet from './Tweet';
+import Tweet from './tweet';
 import { tweetsData } from './data';
 
 /* Do not write your tweet component here, write it in the tweet.tsx file */
