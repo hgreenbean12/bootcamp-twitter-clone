@@ -41,7 +41,7 @@ const Tweet: React.FC<TweetProps> = ({ key, username, content, likes, timestamp 
   };
 
   return (
-    <div className="tweet">
+    <div className="Tweet">
       <h3>{username}</h3>
       <p>{content}</p>
       <div>
