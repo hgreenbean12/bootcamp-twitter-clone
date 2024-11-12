@@ -20,14 +20,14 @@ Theres a 'tweet' class you can use to style your tweet.
 //import React, { useState } from 'react';
 
 interface TweetProps {
-  key: number;
+  id: number;
   username: string;
   content: string;
   likes: number;
   timestamp: string;
 }
 
-const Tweet: React.FC<TweetProps> = ({ key, username, content, likes, timestamp }) => {
+const Tweet: React.FC<TweetProps> = ({ id, username, content, likes, timestamp }) => {
   const [likeCount, setLikeCount] = useState<number>(likes);
   const [isLiked, setIsLiked] = useState<boolean>(false);
 
